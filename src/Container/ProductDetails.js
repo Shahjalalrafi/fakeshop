@@ -9,7 +9,8 @@ const ProductDetails = () => {
     const { productId } = useParams()
     const dispatch = useDispatch()
     console.log(product)
-    const { title, price, category, id, image, description } = product[0]
+    const { title, price, category, id, image, description } = product[productId -1]
+    console.log(title)
 
     const fetchProductDetails = async () => {
         const response = await axios.get(`https://fakestoreapi.com/products/${productId}`)
